@@ -11,7 +11,7 @@ void printHelp() {
     cout << "Usage:\n";
     cout << "  -o, --operation <operation>  Specify the operation to perform (average or median)\n";
     cout << "  Operands must be provided as positional parameters (e.g., 45 13 -2).\n";
-    cout << "  You must provide between 7 and 10 operands.\n";
+    cout << "  You must provide between 7 and 9 operands.\n";
 }
 
 float calculateAverage(const vector<float>& operands) {
@@ -34,8 +34,7 @@ float calculateMedian(vector<float>& operands) {
 }
 
 int main(int argc, char **argv) {
-    // Проверка на количество аргументов
-    if (argc < 9 || argc > 12) { // от 7 до 10 операндов + опция и операция
+    if (argc < 9 || argc > 11) { // Проверка на количество аргументов
         printHelp();
         return 1;
     }
@@ -62,7 +61,7 @@ int main(int argc, char **argv) {
     }
 
     // Проверка на количество операндов
-    if (operands.size() < 7 || operands.size() > 10) {
+    if (operands.size() < 7 || operands.size() > 9) {
         printHelp();
         return 1;
     }
